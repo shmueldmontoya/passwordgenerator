@@ -63,13 +63,17 @@ document.getElementById('passwordForm').addEventListener('submit', (event) => {
 // Copiar contraseña al portapapeles
 document.getElementById('copyPasswordButton').addEventListener('click', () => {
     const password = document.getElementById('generatedPassword').textContent;
+    const copyMessage = document.querySelector('.copy-message');
+
     if (password) {
         navigator.clipboard.writeText(password).then(() => {
-            alert('Contraseña copiada al portapapeles');
+            // Mostrar el mensaje de copiado
+            copyMessage.classList.add('visible');
+            setTimeout(() => {
+                copyMessage.classList.remove('visible');
+            }, 2000); // Ocultar el mensaje después de 2 segundos
         }).catch(err => {
-            alert('Error al copiar la contraseña');
+            console.error('Error al copiar la contraseña:', err);
         });
-    } else {
-        alert('No hay contraseña generada para copiar');
     }
 });

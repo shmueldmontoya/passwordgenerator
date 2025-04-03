@@ -203,6 +203,52 @@ form button:hover {
     font-size: 1.2rem;
 }
 
+/* Estilo para el mensaje de copiado */
+#copyMessage {
+    position: absolute;
+    /*top: -25px;*/
+    right: 0;
+    background-color: #00ADB5;
+    color: #E7F6F2;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+#copyMessage.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo para el mensaje de copiado */
+.copy-message {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    background-color: #00ADB5;
+    color: #E7F6F2;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.copy-message.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none;
+}
+
 /* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
     #passwordResult {
