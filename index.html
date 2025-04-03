@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script defer src="app.js"></script>
+    <script src="https://kit.fontawesome.com/2bcc83cc55.js" crossorigin="anonymous"></script>
+    <title>Generador de contraseñas</title>
+</head>
+<body>
+    <div class="passGenMain">
+        <h1>Generador de contraseñas</h1>
+        <form id="passwordForm">
+            <div>
+                <label for="length">Longitud de la contraseña:</label>
+                <input type="range" id="length" name="length" min="1" max="20" value="16" oninput="updateLengthValue(this.value)">
+                <span id="lengthValue">16</span>
+            </div>
+            
+            <div>
+                <label>
+                    <input type="checkbox" id="includeUppercase" name="includeUppercase">
+                    Incluir mayúsculas
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" id="includeLowercase" name="includeLowercase" checked>
+                    Incluir minúsculas
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" id="includeNumbers" name="includeNumbers">
+                    Incluir números
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" id="includeSpecialChars" name="includeSpecialChars">
+                    Incluir caracteres especiales
+                </label>
+            </div>
+            
+            <button type="submit">Generar Contraseña</button>
+        </form>
+        <div id="passwordResult">
+            <p id="generatedPassword">C0NTR45EÑ4</p>
+            <button id="copyPasswordButton" type="button"><i class="fa-solid fa-copy"></i></button>
+        </div>
+    </div>
+</body>
+</html>
